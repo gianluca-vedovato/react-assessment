@@ -1,44 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# React assessment
 
-## Available Scripts
+## Goals of the assessment
 
-In the project directory, you can run:
+Evaluate the implementation of concepts related to component-based architectures, testing, and frontend related knowledge in general.
 
-### `npm start`
+## Requirements
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Build a React application that allows creating users with name and friends (friends are also users) with the following:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- A page that lists all users and links to a user detail page and to a "create user" page (1 in the schema)
+- A page to create a new user (2 in the schema)
 
-### `npm test`
+  - in this page, a user must insert a name
+  - a friend can optionally be selected by users already existing
+  - if "new friend" is clicked a new "create user" page is stacked on top of the current one while showing a slice of the previous
+    NB: this can be done infinitely - when two or more creation are stacked clicking on a lower item in the stack asks the user to save or abort the current user creation
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- A page that allows edit of a user (3 in the schema)
 
-### `npm run build`
+## constrains
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- a user creation or user update can randomly fail.
+- if creation fails, try again without the user knowing
+- if creation fails two times in a row inform the user that something went wrong and show a button that allows for a retry
+- cannot have two or more users with the same name
